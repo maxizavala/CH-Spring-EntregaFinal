@@ -1,6 +1,5 @@
 package com.deg.productservice.service;
 
-import com.deg.productservice.model.Client;
 import com.deg.productservice.model.Product;
 import com.deg.productservice.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;

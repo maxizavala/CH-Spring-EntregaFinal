@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalHandlerException {
 
+    @ExceptionHandler(ProductAlreadyExistsException.class)
+    public ResponseEntity<?> productAlreadyExistsException(Exception e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
+    }
+
     @ExceptionHandler(ClientAlreadyExistsException.class)
     public ResponseEntity<?> clientAlreadyExistsException(Exception e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
     }
-
 }

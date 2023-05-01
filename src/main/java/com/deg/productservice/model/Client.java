@@ -20,7 +20,8 @@ public class Client {
 
     private String docnumber;
 
-    @OneToMany(mappedBy = "client")
-    private List<Invoice> invoices;
+    public Client() {
+
+    }
 
 }
