@@ -15,7 +15,19 @@ public class InvoiceDetail {
     private int amoun;
     private double price;
 
+    @ManyToOne
+    @JoinColumn(name = "invoice_id")
+    private Invoice invoice;
+
     public InvoiceDetail() {
+    }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
     }
 
 }
