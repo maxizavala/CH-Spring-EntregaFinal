@@ -32,7 +32,7 @@ USE store;
 CREATE TABLE invoice_details(
 	id INT AUTO_INCREMENT PRIMARY KEY,
   	invoice_id INT NOT NULL,
-  	amoun INT,
+  	amount INT,
   	product_id INT NOT NULL,
   	price DOUBLE,
   	constraint fk_invoicedetails_invoice foreign key(invoice_id) references invoice(id),
@@ -49,17 +49,20 @@ INSERT INTO clients (name, lastname, docnumber) VALUES
 ('Juan', 'Ortiz', '56789012345');
 
 INSERT INTO products (description, code, stock, price) VALUES
-('Lavadora Whirlpool', 'LAV001', 5, 1599000),
-('Nevera LG', 'NEV001', 8, 2149000),
-('Televisor Samsung', 'TV001', 3, 2999000),
-('Aspiradora Philips', 'ASP001', 12, 299000),
-('Horno microondas LG', 'HOR001', 7, 539000),
-('Licuadora Oster', 'LIC001', 10, 179000),
-('Cafetera DeLonghi', 'CAF001', 4, 999000),
-('Batidora KitchenAid', 'BAT001', 6, 399000),
-('Plancha Black+Decker', 'PLA001', 15, 99000),
-('Ventilador de techo', 'VEN001', 0, 299000);
+('Lavadora Whirlpool', 'LAV001', 5, 159900),
+('Nevera LG', 'NEV001', 8, 214900),
+('Televisor Samsung', 'TV001', 3, 299900),
+('Aspiradora Philips', 'ASP001', 12, 29900),
+('Horno microondas LG', 'HOR001', 7, 53900),
+('Licuadora Oster', 'LIC001', 10, 17900),
+('Cafetera DeLonghi', 'CAF001', 4, 99900),
+('Batidora KitchenAid', 'BAT001', 6, 39900),
+('Plancha Black+Decker', 'PLA001', 15, 9900),
+('Ventilador de techo', 'VEN001', 0, 29900);
 
 INSERT INTO invoice (client_id, created_at, total) VALUES 
-(1, '2023-05-01 10:00:00', 1000),
-(2, '2023-04-30 15:30:00', 500);
+(1, '2023-05-01 10:00:00', 759700);
+
+INSERT INTO invoice_details (invoice_id, amount, product_id, price) VALUES 
+(1, 1, 1, 159900),
+(1, 2, 3, 299900);
